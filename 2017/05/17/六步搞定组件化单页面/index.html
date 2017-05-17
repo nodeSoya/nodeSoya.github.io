@@ -24,27 +24,27 @@
 <meta name="keywords" content="Vue,组件化,可配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="六步搞定组件化单页面">
-<meta property="og:url" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/index.html">
+<meta property="og:url" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/index.html">
 <meta property="og:site_name" content="sfloat的博客">
 <meta property="og:description" content="适读人群：1.具备工程化思维的前端2.想了解现阶段前后端的合作方式的后端 概述文章以单页面为核心阐述它的实现过程，里面涉及概念的东西不多，因为考虑到讲概念去对大家帮助不大，而且这些概念随手百度google都可以找到。所以文章主要从大体步骤的角度简单讲讲的是我是如何将OA重构成组件化单页面应用，并且实现通过配置完成新流程的动态添加的。希望大家读完后能对此类项目有个基本的实现思路 第一步：制定组件标准">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/oaui-1.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/oaui-2.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/component-1.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/component-3.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/state-1.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片9.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片10.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片11.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片12.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片13.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片14.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片15.png">
-<meta property="og:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/图片16.png">
-<meta property="og:updated_time" content="2017-05-17T10:47:54.628Z">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/oaui-1.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/oaui-2.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/component-1.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/component-3.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/state-1.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片9.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片10.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片11.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片12.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片13.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片14.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片15.png">
+<meta property="og:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/图片16.png">
+<meta property="og:updated_time" content="2017-05-17T10:48:43.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="六步搞定组件化单页面">
 <meta name="twitter:description" content="适读人群：1.具备工程化思维的前端2.想了解现阶段前后端的合作方式的后端 概述文章以单页面为核心阐述它的实现过程，里面涉及概念的东西不多，因为考虑到讲概念去对大家帮助不大，而且这些概念随手百度google都可以找到。所以文章主要从大体步骤的角度简单讲讲的是我是如何将OA重构成组件化单页面应用，并且实现通过配置完成新流程的动态添加的。希望大家读完后能对此类项目有个基本的实现思路 第一步：制定组件标准">
-<meta name="twitter:image" content="http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/oaui-1.png">
+<meta name="twitter:image" content="https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/oaui-1.png">
     
         <link rel="alternate" type="application/atom+xml" title="sfloat的博客" href="/atom.xml">
     
@@ -210,7 +210,7 @@
 <img src="/2017/05/17/六步搞定组件化单页面/state-1.png" alt="component" title="component">
 <p><br></p>
 <h2 id="第五步：开发实践"><a href="#第五步：开发实践" class="headerlink" title="第五步：开发实践"></a>第五步：开发实践</h2><blockquote>
-<p>TIPS：图纸画好，方案确定，流水线也规划完成，剩下的就是开工了，打磨的打磨，清洗的清洗</p>
+<p>TIPS：图纸画好，方案确定，流水线也规划完成，剩下的就是开工了，打磨的打磨，清洗的清洗。</p>
 </blockquote>
 <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>前面我们组件标准制定的时候有提到组件分为两种：通用组件和业务组件，这两种组件在我们实际的开发中应用方式是不一样的。</p>
 <p>1．通用组件是一个独立封装的库，和Vue还是单页面都没有关联，可平滑移植到不同的项目，调用方式也只需一个函数接口进行调用，比如弹窗，时间选择，确认选择等，如下图：</p>
@@ -235,7 +235,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-17T10:47:54.628Z" itemprop="dateUpdated">2017-05-17 18:47:54</time>
+    最后更新时间：<time datetime="2017-05-17T10:48:43.810Z" itemprop="dateUpdated">2017-05-17 18:48:43</time>
 </span><br>
 
 
@@ -244,7 +244,7 @@
         
     </div>
     <footer>
-        <a href="http://cd.yucow.com">
+        <a href="https://nodesoya.github.io">
             <img src="/img/avatar.jpg" alt="sfloat">
             sfloat
         </a>
@@ -270,7 +270,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&pic=http://cd.yucow.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&pic=https://nodesoya.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -280,22 +280,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《六步搞定组件化单页面》 — sfloat的博客&url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/&via=http://cd.yucow.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《六步搞定组件化单页面》 — sfloat的博客&url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/&via=https://nodesoya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -395,7 +395,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&pic=http://cd.yucow.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&pic=https://nodesoya.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -405,22 +405,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/&title=《六步搞定组件化单页面》 — sfloat的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《六步搞定组件化单页面》 — sfloat的博客&url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/&via=http://cd.yucow.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《六步搞定组件化单页面》 — sfloat的博客&url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/&via=https://nodesoya.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -431,7 +431,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aS47bMBAFQN//0g6Q7UCa95pyEJPFlWEbEouLBvvzesXr/Xf9/Hz169V/rp7z/rFen1gYGBhfy3jfrqut378+gd2/Pd8bBgbGOYw8yObBtz2s5PmX32NgYGCMAnH7efZ8DAwMjDZNfeo6iIGBgTFLYouUciGUfzwXx8DA+ELGSmPg05//UX8DAwPjP2a8R+s+pK60Kof7wcDA2JqRJJx5CG4vcDkpCsQYGBgHMJIAunKZyzfaHgEGBsY5jHYILN9uvsWlnWBgYBzASNqQ+a9tAE2C+y8pNAYGxtaM+02sNBLygloefH85FAwMjE0ZyYDXSjhuC2rDII6BgXEAIx/wygNlPua1UufHwMDYmzELmm3Jvh3geLheiIGBsTVjdlmctQGWSnIYGBhbM2aFrbZ8nyfA+UgHBgbGOYwk4WyHIWaheXYZxcDAOIGRJ5lPFcjy4l2SKkc3TQwMjC9nJEGwHafIk8+oa5GkxxgYGFsz2tR0lrjOrpt1JxYDA2NrRt6YbNuWKxtt/4mBgXECox3tWin954W24tAxMDC2ZjxVFFu5OK4kwxgYGHszZs2AWdtylqBG78XAwNiaka/1reeJcTuigYGBcQKjDbKzQa5ZUC4OCAMD4wDGLPC1oxJPjWtgYGBgzK5osytgHr6LSiEGBsbBjJUXzwYyiuIaBgbGAYzklTNw+/y2jYqBgXECo20MtFe99uDasI6BgbE14w+fPFbkAILgEAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQU4DMQwF0N7/0rBhgQSd+bbjUqQ3q6odpnlBStJvPx7x9fHt+v7Oz0+TO5898+c913ceu/Dw8PAGQ78eYvLF1+wcnI/n2T14eHh427xnK+r1PdfImy++nOLeePDw8PDemZdvCdek6kkYDw8P7//ykiFeT82pUAMPDw/vr3iTR1c/rR64R8/Bw8PDW+DlVaT3eb1S38PDw8MbV9WrQUASW1SLYb1xfv0tHh4e3gKvGigkR9jrMDf/NC+M3bRn4eHh4a3x5jFBUvifTFPSpvDLNOHh4eEd5U1+9k/asJLAN39nlKDg4eHhtXj5QTYv2OcNAcnS35wgPDw8vAXeqbA12QZyRm9Lu3kOHh4e3iHepMiUM/JJqU5ZVN/Dw8PDW+BNgoPqIbvaNND7Rjw8PLw93qngYH5ErrZw5Ww8PDy8s7x8KJPCVa/1qnqsL9fo8PDw8Fq83kJcZcxhvZHg4eHhbfDyxbfXalA9BOcRRvRvwMPDw1vg9Y6/1SghCSnyzaAaH+Ph4eFt8HqwvGSVYPLjci96xsPDwzvFS5bj3iYxb9XqRRV4eHh4r+FNDse99oJkce81GeDh4eG9klf+eV9sLEjC32pAfBNP4OHh4a3xquFpXnzKy/95PFHYlvDw8PAWePlCPwHMW6nyJ0SHcjw8PLwxr7fQV++pvtNsEahWz/Dw8PAGvCQOOFWaqrZ5jah4eHh4L+TlB988Wq1uA71iGB4eHt4e76N4VWOL6lI+2SSinjI8PDy8Me/sQp83ClRJ1dd4eHh427xqkWmyEPeaD0YbAx4eHt4aL3l07xg9aR3oFfAevZnDw8PDW+NVi2fVWLYa795sUXh4eHhvw8uj3vk2Mwma8fDw8PZ4vdaoanksL3r1Gq2ebgx4eHh4R3nVH/y9FoG8JFbdWg5ceHh4eCnvE4T9xTrFOjZcAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

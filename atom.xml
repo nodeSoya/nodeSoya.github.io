@@ -4,9 +4,9 @@
   <subtitle>阻止成长的不是无知，而是傲慢与偏见</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://cd.yucow.com/"/>
-  <updated>2017-05-17T10:47:54.628Z</updated>
-  <id>http://cd.yucow.com/</id>
+  <link href="https://nodesoya.github.io/"/>
+  <updated>2017-05-17T10:48:43.810Z</updated>
+  <id>https://nodesoya.github.io/</id>
   
   <author>
     <name>sfloat</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>六步搞定组件化单页面</title>
-    <link href="http://cd.yucow.com/2017/05/17/%E5%85%AD%E6%AD%A5%E6%90%9E%E5%AE%9A%E7%BB%84%E4%BB%B6%E5%8C%96%E5%8D%95%E9%A1%B5%E9%9D%A2/"/>
-    <id>http://cd.yucow.com/2017/05/17/六步搞定组件化单页面/</id>
+    <link href="https://nodesoya.github.io/2017/05/17/%E5%85%AD%E6%AD%A5%E6%90%9E%E5%AE%9A%E7%BB%84%E4%BB%B6%E5%8C%96%E5%8D%95%E9%A1%B5%E9%9D%A2/"/>
+    <id>https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/</id>
     <published>2017-05-17T07:39:52.000Z</published>
-    <updated>2017-05-17T10:47:54.628Z</updated>
+    <updated>2017-05-17T10:48:43.810Z</updated>
     
     <content type="html"><![CDATA[<p>适读人群：<br>1.具备工程化思维的前端<br>2.想了解现阶段前后端的合作方式的后端</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>文章以单页面为核心阐述它的实现过程，里面涉及概念的东西不多，因为考虑到讲概念去对大家帮助不大，而且这些概念随手百度google都可以找到。所以文章主要从大体步骤的角度简单讲讲的是我是如何将OA重构成组件化单页面应用，并且实现通过配置完成新流程的动态添加的。希望大家读完后能对此类项目有个基本的实现思路</p>
@@ -48,7 +48,7 @@
 <img src="/2017/05/17/六步搞定组件化单页面/state-1.png" alt="component" title="component">
 <p><br></p>
 <h2 id="第五步：开发实践"><a href="#第五步：开发实践" class="headerlink" title="第五步：开发实践"></a>第五步：开发实践</h2><blockquote>
-<p>TIPS：图纸画好，方案确定，流水线也规划完成，剩下的就是开工了，打磨的打磨，清洗的清洗</p>
+<p>TIPS：图纸画好，方案确定，流水线也规划完成，剩下的就是开工了，打磨的打磨，清洗的清洗。</p>
 </blockquote>
 <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>前面我们组件标准制定的时候有提到组件分为两种：通用组件和业务组件，这两种组件在我们实际的开发中应用方式是不一样的。</p>
 <p>1．通用组件是一个独立封装的库，和Vue还是单页面都没有关联，可平滑移植到不同的项目，调用方式也只需一个函数接口进行调用，比如弹窗，时间选择，确认选择等，如下图：</p>
@@ -75,14 +75,14 @@
     
     </summary>
     
-      <category term="架构" scheme="http://cd.yucow.com/categories/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="https://nodesoya.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="Vue" scheme="http://cd.yucow.com/tags/Vue/"/>
+      <category term="Vue" scheme="https://nodesoya.github.io/tags/Vue/"/>
     
-      <category term="组件化" scheme="http://cd.yucow.com/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+      <category term="组件化" scheme="https://nodesoya.github.io/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
     
-      <category term="可配置" scheme="http://cd.yucow.com/tags/%E5%8F%AF%E9%85%8D%E7%BD%AE/"/>
+      <category term="可配置" scheme="https://nodesoya.github.io/tags/%E5%8F%AF%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
