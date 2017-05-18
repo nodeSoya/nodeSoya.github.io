@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nodesoya.github.io/"/>
-  <updated>2017-05-17T10:48:43.810Z</updated>
+  <updated>2017-05-18T07:41:22.114Z</updated>
   <id>https://nodesoya.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="https://nodesoya.github.io/2017/05/17/%E5%85%AD%E6%AD%A5%E6%90%9E%E5%AE%9A%E7%BB%84%E4%BB%B6%E5%8C%96%E5%8D%95%E9%A1%B5%E9%9D%A2/"/>
     <id>https://nodesoya.github.io/2017/05/17/六步搞定组件化单页面/</id>
     <published>2017-05-17T07:39:52.000Z</published>
-    <updated>2017-05-17T10:48:43.810Z</updated>
+    <updated>2017-05-18T07:41:22.114Z</updated>
     
     <content type="html"><![CDATA[<p>适读人群：<br>1.具备工程化思维的前端<br>2.想了解现阶段前后端的合作方式的后端</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>文章以单页面为核心阐述它的实现过程，里面涉及概念的东西不多，因为考虑到讲概念去对大家帮助不大，而且这些概念随手百度google都可以找到。所以文章主要从大体步骤的角度简单讲讲的是我是如何将OA重构成组件化单页面应用，并且实现通过配置完成新流程的动态添加的。希望大家读完后能对此类项目有个基本的实现思路</p>
 <h2 id="第一步：制定组件标准"><a href="#第一步：制定组件标准" class="headerlink" title="第一步：制定组件标准"></a>第一步：制定组件标准</h2><blockquote>
 <p>TIPS：车在组装各零件之前，得先将各个零件规范起来，不能这个轮子1m长那个轮子1.2m的，这样就四不像了。</p>
 </blockquote>
-<p>实现组件化的前提是得标准化。怎么完成标准化呢？大概步骤可分为三步：<br>1.以重用度为标准归纳和分类各组件。而组件中主要分为两种：通用组件和业务组件，通用组件如弹窗、按钮、时间插件等，业务组件如顶部个人信息，机票块信息等跟业务相关的组件。<br>2.将归纳出来的组件进行设计，统一风格。<br>3.根据UI给的设计图编写组件库。类似微信的WeUI，我也写了一个OAUI，并且提供了人性化的错误提示和单页面适配。<br>网址：<a href="http://oaui.yucow.com" target="_blank" rel="external">http://oaui.yucow.com</a><br>如下图：<br><img src="/2017/05/17/六步搞定组件化单页面/oaui-1.png" alt="oaui" title="oaui"><img src="/2017/05/17/六步搞定组件化单页面/oaui-2.png" alt="oaui" title="oaui"></p>
+<p>实现组件化的前提是得标准化。怎么完成标准化呢？大概步骤可分为三步：<br>1.以重用度为标准归纳和分类各组件。而组件中主要分为两种：通用组件和业务组件，通用组件如弹窗、按钮、时间插件等，业务组件如顶部个人信息，机票块信息等跟业务相关的组件。<br>2.将归纳出来的组件进行设计，统一风格。<br>3.根据UI给的设计图编写组件库。类似微信的WeUI，我也写了一个OAUI，并且提供了人性化的错误提示和单页面适配。<br>网址：<a href="http://oaui.yucow.com" target="_blank" rel="external">http://oaui.yucow.com</a><br>如下图：<br><img src="/2017/05/17/六步搞定组件化单页面/oaui-1.png" alt="oaui" title="oaui"><img src="/2017/05/17/六步搞定组件化单页面/图1.png" alt="oaui" title="oaui"></p>
 <h2 id="第二步：单页面框架选型"><a href="#第二步：单页面框架选型" class="headerlink" title="第二步：单页面框架选型"></a>第二步：单页面框架选型</h2><blockquote>
 <p>TIPS：生厂一类汽车，该让什么厂生产呢？大厂快但是耗费多，小厂耗费少但是慢，怎么选？这个时候就需要根据我们的需求场景来选择一个合适的，如果量大时间紧果断大厂送过去，如果钱少周期长，小厂也很稳健。</p>
 </blockquote>
