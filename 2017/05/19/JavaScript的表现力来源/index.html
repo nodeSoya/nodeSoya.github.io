@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JavaScript的表现力来源 | sfloat的博客 | 阻止成长的不是无知，而是傲慢与偏见</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="适读人群：想对JavaScript做深入了解的前端工程师 概述JavaScript是一门灵活且有表现力的语言，当然灵活也带来了很多坑。那么JavaScript的表现力核心在哪里呢？我认为主要有三个地方：this，作用域，原型链。 一．This相信大家对This并不陌生，This是一个指向对象的指针，往往谁调它它指谁。而调用的环境是多变的，也就带来了this指向的灵活。 默认this的指向是glob">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript的表现力来源">
+<meta property="og:url" content="https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/index.html">
+<meta property="og:site_name" content="sfloat的博客">
+<meta property="og:description" content="适读人群：想对JavaScript做深入了解的前端工程师 概述JavaScript是一门灵活且有表现力的语言，当然灵活也带来了很多坑。那么JavaScript的表现力核心在哪里呢？我认为主要有三个地方：this，作用域，原型链。 一．This相信大家对This并不陌生，This是一个指向对象的指针，往往谁调它它指谁。而调用的环境是多变的，也就带来了this指向的灵活。 默认this的指向是glob">
+<meta property="og:updated_time" content="2017-05-19T12:08:54.685Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript的表现力来源">
+<meta name="twitter:description" content="适读人群：想对JavaScript做深入了解的前端工程师 概述JavaScript是一门灵活且有表现力的语言，当然灵活也带来了很多坑。那么JavaScript的表现力核心在哪里呢？我认为主要有三个地方：this，作用域，原型链。 一．This相信大家对This并不陌生，This是一个指向对象的指针，往往谁调它它指谁。而调用的环境是多变的，也就带来了this指向的灵活。 默认this的指向是glob">
+    
+        <link rel="alternate" type="application/atom+xml" title="sfloat的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">sfloat</h5>
+          <a href="mailto:934599106@qq.com" title="934599106@qq.com" class="mail">934599106@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript的表现力来源</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript的表现力来源</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-19T09:45:20.000Z" itemprop="datePublished" class="page-time">
+  2017-05-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/语言本身/">语言本身</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一．This"><span class="post-toc-number">2.</span> <span class="post-toc-text">一．This</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二．作用域"><span class="post-toc-number">3.</span> <span class="post-toc-text">二．作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三．原型链"><span class="post-toc-number">4.</span> <span class="post-toc-text">三．原型链</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">5.</span> <span class="post-toc-text">结语</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-JavaScript的表现力来源"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript的表现力来源</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-19 17:45:20" datetime="2017-05-19T09:45:20.000Z"  itemprop="datePublished">2017-05-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/语言本身/">语言本身</a></li></ul>
+
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>适读人群：想对JavaScript做深入了解的前端工程师</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>JavaScript是一门灵活且有表现力的语言，当然灵活也带来了很多坑。那么JavaScript的表现力核心在哪里呢？我认为主要有三个地方：this，作用域，原型链。</p>
+<h2 id="一．This"><a href="#一．This" class="headerlink" title="一．This"></a>一．This</h2><p>相信大家对This并不陌生，This是一个指向对象的指针，往往谁调它它指谁。而调用的环境是多变的，也就带来了this指向的灵活。</p>
+<p>默认this的指向是global。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">38</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showNumber</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1</span></div><div class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</div><div class="line">&#125;</div><div class="line"></div><div class="line">showNumber() <span class="comment">// 输出：38，this指向为global</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showAll</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">183</span></div><div class="line">    <span class="keyword">var</span> showNumber = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> showNumber()</div><div class="line">&#125;</div><div class="line"></div><div class="line">showAll() <span class="comment">// 输出：38，即时在函数内，没有定义为对象属性调用该函数的依旧是global</span></div></pre></td></tr></table></figure></p>
+<p>如果调用函数的是某对象时，则函数内的this指向该对象。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">38</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showNumber</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1</span></div><div class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> methodsObj = &#123;<span class="attr">a</span>: <span class="number">110</span>&#125;</div><div class="line">methodsObj.showNumber = showNumber</div><div class="line"></div><div class="line">methodsObj.showNumber() <span class="comment">// 输出：110，因为调用该函数的是methodsObj</span></div><div class="line"><span class="keyword">new</span> showNumber() <span class="comment">// 输出：undefined，new构造了新的对象，调用函数的是新对象</span></div></pre></td></tr></table></figure></p>
+<p>This不仅有默认的指向，而且它是可以设置的，通过call，apply即可设置。从而实现两个对象的弱连接，得以共享数据和方法。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a + <span class="keyword">this</span>.b)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> dataObj = &#123;<span class="attr">a</span>: <span class="number">110</span>, <span class="attr">b</span>: <span class="number">200</span>&#125;</div><div class="line"></div><div class="line">add.call(dataObj) <span class="comment">// 输出：310</span></div></pre></td></tr></table></figure></p>
+<p>上面这个例子中，对于对象dataObj来说是共享了global的方法add，处理了自己的数据。而对于global则是共享了dataObj的数据，让global的方法得以获取。</p>
+<h2 id="二．作用域"><a href="#二．作用域" class="headerlink" title="二．作用域"></a>二．作用域</h2><p>直接讲作用域可能大家是陌生的，但闭包大家一定不陌生，而闭包的原理就在作用域上。JS是中最小的作用域单位是函数，所以带来了闭包，闭包在多种场景中都有使用，比如私有变量，块作用域等。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 私有变量 */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addFactory</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">110</span>, b = <span class="number">330</span></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        a = a+<span class="number">8</span></div><div class="line">        <span class="built_in">console</span>.log(a + b)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> add = addFactory()</div><div class="line">add() <span class="comment">// 输出：448</span></div><div class="line">add() <span class="comment">// 输出：456，a变量作为add的私有变量，外部不可见</span></div><div class="line"></div><div class="line"><span class="comment">/* 块作用域 */</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i) <span class="comment">// 输出：五个5</span></div><div class="line">    &#125;, <span class="number">100</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(i) <span class="comment">// 输出：0,1,2,3,4，因为闭包封装了一块作用域，使其不受外部变量影响</span></div><div class="line">        &#125;, <span class="number">100</span>)</div><div class="line">    &#125;)(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>而且函数内声明的变量真实的执行顺序是在顶部，因为无需考虑块作用域的情况。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(a)</div><div class="line">     <span class="built_in">console</span>.log(foo())</div><div class="line">     <span class="keyword">var</span> a = <span class="number">1</span></div><div class="line">     <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="keyword">return</span> <span class="number">2</span></div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"> test() <span class="comment">// 输出：undefined，2</span></div><div class="line"></div><div class="line"><span class="comment">// 上述test函数相当于</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="keyword">var</span> a</div><div class="line">     <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="keyword">return</span> <span class="number">2</span></div><div class="line">     &#125;</div><div class="line">     <span class="built_in">console</span>.log(a)</div><div class="line">     <span class="built_in">console</span>.log(foo())</div><div class="line">     a = <span class="number">1</span></div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="三．原型链"><a href="#三．原型链" class="headerlink" title="三．原型链"></a>三．原型链</h2><p>原型链是js类继承的实现方式，通过原型链实现了js对象的强连接，让this直接调用父对象的属性。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'haki'</span></div><div class="line">&#125;</div><div class="line">Animal.prototype.speak = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is '</span> + <span class="keyword">this</span>.age + <span class="string">' years old'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.age = <span class="string">'33'</span></div><div class="line">&#125;</div><div class="line">People.prototype = <span class="keyword">new</span> Animal()</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> People()</div><div class="line">person.speak() <span class="comment">// haki is 33 years old</span></div></pre></td></tr></table></figure></p>
+<p>上面的例子中People通过prototype和new实现了继承Animal，而这个过程是怎么实现的呢？主要是两步：<br>1.将prototype指向需要继承的对象<br>2.通过new实例化对象(创建新对象-&gt;_proto_指向prototype-&gt;执行构造函数)</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是我认为JavaScript表现力的来源，这些特性带来了灵活性，但是用的不好也会导致代码的不易维护，所以在现实场景中怎么根据需求活学活用是很重要的</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-19T12:08:54.685Z" itemprop="dateUpdated">2017-05-19 20:08:54</time>
+</span><br>
+
+
+        
+        欢迎转载，请注明来源
+        
+    </div>
+    <footer>
+        <a href="https://nodesoya.github.io">
+            <img src="/img/avatar.jpg" alt="sfloat">
+            sfloat
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/&title=《JavaScript的表现力来源》 — sfloat的博客&pic=https://nodesoya.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/&title=《JavaScript的表现力来源》 — sfloat的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript的表现力来源》 — sfloat的博客&url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/&via=https://nodesoya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/05/17/六步搞定组件化单页面/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">六步搞定组件化单页面</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div style='background:#3F51B5;height:40px;line-height:40px;color:#fff;text-align:center;'>
+        <span>sfloat &copy; 2017</span>
+    </div>
+    <!--<div class="top">-->
+        <!--
+-->
+        <!--<p>-->
+            <!---->
+                <!--<span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>-->
+            <!---->
+            <!--<span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--<div class="bottom">-->
+        <!--<p>-->
+            <!--<span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>-->
+            <!--<span>sfloat &copy; 2017</span>-->
+        <!--</p>-->
+    <!--</div>-->
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/&title=《JavaScript的表现力来源》 — sfloat的博客&pic=https://nodesoya.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/&title=《JavaScript的表现力来源》 — sfloat的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript的表现力来源》 — sfloat的博客&url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/&via=https://nodesoya.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://nodesoya.github.io/2017/05/19/JavaScript的表现力来源/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3aQW7DMAwEwP7/0y3QU4HC6S4poTmMT4HjyBodRIbUx0d8fX5fPz//vvP78+vRkief5nD4wsPDwxtN/el6GvrpZU9PPo359G2+xH+MgIeHh3eNlwyX7705IHlLstyP9/Hw8PD+lTebyn7h2oXAw8PDex9emzq34SQPG3h4eHjvwEuKEQl4/0yCv1JrwcPDw4t5swbY/36+3t/Dw8PDG3XV85bY64T49ZadhJ/hPPHw8PAu8GZHoGapdnuUKlmyKGDg4eHhHeXlG/dsc0+CR7uIeUDCw8PDu8HbFwLyNtip9li+0Hh4eHg3eG2zKp9KsrnPShj1fwU8PDy8a7w8eW2n1S7cLHV+LODi4eHhXeC1qe2muFCXEjYBAw8PD+8ar207FUntqA02C0t1So2Hh4c34uXb8eygwI2mWjtnPDw8vLO8pPA628o3O3Meov6YJx4eHt413ibtnpVoZ2l9nXDj4eHhXePNShKb4whtsy0vBEcNMDw8PLxDvHYrnxVe81LsgRQcDw8P7zIvL0DkW3ObjrcFkTqlxsPDwzvEm7WdNge29m+MwgMeHh7eBV6y9e9bXG0JeNa9ig5j4eHh4a15mwNSsxJwO93N8uHh4eHd4BURIy5M5L/dlx5WaTQeHh7egpe39pNp5YGhLT20bTY8PDy827xNsbVtg7XNtll6jYeHh3eP1x4qnQWJJAVvCx+RCA8PD+8yb3Z0NYFt0vR25x82AfHw8PAC3md5HWhHzWokwZI9hgQ8PDy8o7y2VDEbYtYq2yTueHh4eLd5s3JD0tDKj7e24w9PRuDh4eEd5bXB4PWv2gJu3oprW2V4eHh478Zrt+n8ENWmzIGHh4f3Prz2zgbcLsGBwICHh4dX8tpB82/bOxveqtaCh4eHN+n1Rw2wWeEgPyjQPjkrYeDh4eGNeF/BA4dcFrJ7kwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
