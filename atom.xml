@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nodesoya.github.io/"/>
-  <updated>2017-07-30T03:51:08.440Z</updated>
+  <updated>2017-07-30T03:54:02.139Z</updated>
   <id>https://nodesoya.github.io/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="https://nodesoya.github.io/2017/07/30/%E5%89%8D%E7%AB%AF%E6%AD%A6%E6%9E%97%E4%B9%8B%E5%8D%81%E6%8B%9B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>https://nodesoya.github.io/2017/07/30/前端武林之十招设计模式/</id>
     <published>2017-07-30T03:44:49.000Z</published>
-    <updated>2017-07-30T03:51:08.440Z</updated>
+    <updated>2017-07-30T03:54:02.139Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>天下武功，唯快不破，而习武却止于形者，往往套路舞到完，拳头吃到饱。我们不仅要知其然，更要知其所以然。下面我们就一起来剖析前端武林的十招设计模式。每招设计模式分为：描述、剖析、栗子。</p>
-<h2 id="第一式：单例模式"><a href="#第一式：单例模式" class="headerlink" title="第一式：单例模式"></a>第一式：单例模式</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>天下武功，唯快不破，而习武却止于形者，往往套路舞到完，拳头吃到饱。我们不仅要知其然，更要知其所以然。下面我们就一起来剖析前端武林的十招设计模式，每招设计模式分为：描述、剖析、栗子三个部分，栗子主要采用少林寺作为场景，方便大家理解。</p>
+<h2 id="第一式：单例模式"><a href="#第一式：单例模式" class="headerlink" title="第一式：单例模式"></a>第一式：单例模式</h2><p>描述：保证一个类只有一个实例<br>剖析：去除的是重复创建类的性能冗余和空间冗余。DOM的创建过程也同样适用。<br>栗子：练拳需要沙袋，如果每次练都挂一个沙袋，不仅空间浪费，还耗时耗力</p>
+]]></content>
     
     <summary type="html">
     
